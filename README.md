@@ -99,9 +99,43 @@
 * Type coercion
 * Accessing the DOM with vanilla javascript: `document.querySelector()`, `document.querySelectorAll()`, `document.getElementByID()`, `document.getElementByClassName()`
 * Vanilla javascript event listeners: `element.addEventListener('nameOfEvent', functionToRun)`
+* Hoisting
+* `location.hash`
+* Array looping methods - `forEach()`, `map()`, `filter()`, `reduce()`
+* Constructors - functions that are used to create objects
+* Prototypes - an object that other objects can look up methods on
+* `this` keyword
+* ES2015 (aka ES6) and ES Next - New and future versions of EcmaScript, the language specification JavaScript follows.
+      * Other implementations of EcmaScript include ActionScript, SpiderMonkey, and JScript. [See full list of implementations](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines).
+      * ES Next - [ES2016](https://tc39.github.io/ecma262/2016/), ES2017, and beyond
+      * [Babel](https://babeljs.io/) - ES2015 features aren't always compatible. Babel compiles newer syntax down to ES5
+      
+
+## jQuery
+* getters and setters
+* `.append(elementOrString)` and `.prepend(elementOrString)`
+* event listening with `.on()`
+* `.attr()` method - used to access or change attributes in HTML elements
+
+## AJAX (asynchonous javascript and xml)
+* used to make CRUD apps (four verbs: create, read, update, destroy)
+* HTTP verbs - POST, GET, PUT, DELETE
+* jQuery AJAX - `$.ajax(settings)` where `settings` is an object that configures the ajax request
+* API - application interface
+* JSON - JavaScript Object Notation
+* CORS (Cross-Origin Resource Sharing) - Allows you to make requests to a different origin from your own. If the API you're trying to access doesn't allow CORS, use `dataType: jsonp` in your settings object.
+* REST - representation state transfer
+ 
+## Build Tools & SPAs
+* Popular build tools - Gulp, Grunt, Broccoli, Webpack, NPM scripts
+* install dependencies with `npm install --save <dependency name>`
+* Install dev dependencies with `npm install --save-dev <dependency name>`
+
+## Backbone and Underscore
 
 ## Useful Tools
 * [caniuse.com](http://caniuse.com)
 * [Pixel perfect chrome extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 * [Responsive Web Design Checklist](http://rwdchecklist.com/)
 * [List of DOM events](https://developer.mozilla.org/en-US/docs/Web/Events)
+* [ES2015 compatiblity table](http://kangax.github.io/compat-table/es6/)
