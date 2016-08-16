@@ -26,12 +26,12 @@
 * Specificity ( interview question: order elements from most to least specific )
 * Block vs inline elements ( interview question: describe the difference, give examples )
 * Box model - content, padding, border, margin
-* Float vs {display: inline-block} vs flexbox
+* Float vs `display: inline-block` vs Flexbox vs CSS Grid Layout (interview questions: describe block formatting, clearing methods)
 * Collapsing margins
 * Units of measurement - px, percent, em, rem, vh, vw
-* Pseudo elements and pseudo classes
+* Pseudo elements and pseudo classes (interview question: describe pseudo elements and pseudo classes. what is the difference?)
 * Positioning - static, relative, absolute, fixed, sticky
-* CSS resets
+* CSS resets (interview question: what is a reset, give examples)
 * Media queries
 
       ```css
@@ -109,7 +109,6 @@
       * Other implementations of EcmaScript include ActionScript, SpiderMonkey, and JScript. [See full list of implementations](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines).
       * ES Next - [ES2016](https://tc39.github.io/ecma262/2016/), ES2017, and beyond
       * [Babel](https://babeljs.io/) - ES2015 features aren't always compatible. Babel compiles newer syntax down to ES5
-      
 
 ## jQuery
 * getters and setters
@@ -125,17 +124,51 @@
 * JSON - JavaScript Object Notation
 * CORS (Cross-Origin Resource Sharing) - Allows you to make requests to a different origin from your own. If the API you're trying to access doesn't allow CORS, use `dataType: jsonp` in your settings object.
 * REST - representation state transfer
+* Server errors - 200 (it worked), 300 (no change), 400 (your request is bad), 500 (something wrong on the server)
  
-## Build Tools & SPAs
+## Build Tools
 * Popular build tools - Gulp, Grunt, Broccoli, Webpack, NPM scripts
 * install dependencies with `npm install --save <dependency name>`
 * Install dev dependencies with `npm install --save-dev <dependency name>`
 
+# Single Page Applications
+* All content lives on a single HTML page, which we manipulate to show different data and elements using javascript and css
+* Plan ahead - wireframes, html/css mocks, data structures
+* AJAX to get and set data
+* Routers - keeps track of which route or page a user wants to see
+* Data Store - single source of truth that keeps track of all application state. Should contain instances of any needed models/collections. Should also contain state information such as fetching from server or pagination data.
+
 ## Backbone and Underscore
+* Underscore is a functional utility library that makes manipulation of data sooo much easier
+* Backbone is a javascript framework used to build SPAs
+      * Often referred to as an MVC (model-view-controller). More accurately an MV* because Backbone doesn't have controllers.
+      * Models - contain application data and the logic surrounding it
+      * Collections - ordered sets of models
+      * Views - listen for events, react to those events, render data to the DOM
+      * Router - create router object with keys as URL path and value as the function to call when you go to that route
+
+## Back End as a Service
+* Back end
+      * persist data
+      * manipulate data before or after saving/retrieving from db
+      * send emails
+      * protect access to data
+      * run scheduled code
+* Authentication
+      * cookie based auth
+      * token based auth
+      * oauth
+      * custom authorization
+* Examples of BaaS - firebase, backendless, parse, Kinvey
+
+## Agile Methodology
+* Standups
+* Scrums
+* Stories - user, developer, bug
 
 ## Useful Tools
 * [caniuse.com](http://caniuse.com)
 * [Pixel perfect chrome extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
-* [Responsive Web Design Checklist](http://rwdchecklist.com/)
+* [Responsive web design checklist](http://rwdchecklist.com/)
 * [List of DOM events](https://developer.mozilla.org/en-US/docs/Web/Events)
 * [ES2015 compatiblity table](http://kangax.github.io/compat-table/es6/)
