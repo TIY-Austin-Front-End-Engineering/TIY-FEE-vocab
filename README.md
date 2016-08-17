@@ -143,6 +143,21 @@
 	var object = {name: 'jess'};
 	var {name} = object;
 	```
+* Default values for parameters - when creating a function, creating default values 3 ways:
+
+  ```js
+  function coolFn(arg) {
+    if (!arg) {arg = 'default value';}
+  }
+  function coolFn(arg) {
+    arg = arg || 'default value'
+  }
+  // both the above will check arg for any default value, but what if arg IS passed in but it's falsey?
+  function coolFn(arg = 'default value') {
+
+  }
+  // this method says "if you forgot to give ma n arg, i'll set it to 'default value'"
+  ```
 
 ## jQuery
 * getters and setters
