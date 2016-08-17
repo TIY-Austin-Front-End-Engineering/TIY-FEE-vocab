@@ -86,11 +86,10 @@
 ## Git
 * Beginner Git syntax - `init`, `remote`, `status`, `add`, `commit` (`-m`), `push`
 * Branching - Create new branches for each feature of your project. Branch commands: 
-      * Create new branch and check that branch out: `git checkout -b <branch name>`
-      * Check out exising branch: `git checkout <branch name>`
-      * List all branches: `git branch`
-      * Rename the current branch: `git branch -m <new branch name>`
-      * Push branch to github: `git push origin <branch name>`
+	* Create new branch and check that branch out: `git checkout -b <branch name>`
+	* Check out exising branch: `git checkout <branch name>`* List all branches: `git branch`
+	* Rename the current branch: `git branch -m <new branch name>`
+	* Push branch to github: `git push origin <branch name>`
 * Pull requests and merging in GitHub
 * After merging branches in your remote, pull changes to local repo: `git pull origin master` or `git pull origin` to pull changes while on a feature branch
 * Cloning - save a copy of a repository to your computer: `git clone <remote repo path> <local folder>`
@@ -108,9 +107,42 @@
 * `this` keyword (interview question: explain how `this` works in JavaScript
 * Scoping and closures 
 * ES2015 (aka ES6) and ES Next - New and future versions of EcmaScript, the language specification JavaScript follows.
-      * Other implementations of EcmaScript include ActionScript, SpiderMonkey, and JScript. [See full list of implementations](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines).
-      * ES Next - [ES2016](https://tc39.github.io/ecma262/2016/), ES2017, and beyond
-      * [Babel](https://babeljs.io/) - ES2015 features aren't always compatible. Babel compiles newer syntax down to ES5
+	* Other implementations of EcmaScript include ActionScript, SpiderMonkey, and JScript. [See full list of implementations](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines).
+	* ES Next - [ES2016](https://tc39.github.io/ecma262/2016/), ES2017, and beyond
+	* [Babel](https://babeljs.io/) - ES2015 features aren't always compatible. Babel compiles newer syntax down to ES5
+* Recursive functions - also known as self-invoking functions. Typically used when you need to call the same function repeatedly with different parameters from within a loop.
+* Promises - allow chaining of asychronous code using `.then` syntax
+	* jQuery's ajax requests are promises, so you can use .then syntax instead of the 'success' callback syntax
+	* You can also write your own promise functions, e.g.
+
+	```javascript
+	  function wait5secs() {
+  	    const promise = new Promise((resolve, reject) => {
+    	      // do promisey stuff here
+  	    });
+  	    return promise;
+	  }
+	  ```
+
+	* A promise constructor always takes a single callback function as its only argument. 
+	* That callback will take 2 functions as its arguments: the first should be called when the conditions of the promise are successfully resolved; the second should be called when the conditions of the promise have failed
+* Object Destructuring - a way of extracting data stored in objects or arrays
+	* if an existing variable name matches the name of a property you wish to create on an object, you can use this alternative syntax:
+
+	```javascript
+	// instead of
+	let myObj = {name: "jess"}
+	// you can use
+	let name = "jess";
+	let myObj = {name}
+	```
+
+	* You can also do the reverse and get a variable name from an object
+
+	```javascript
+	var object = {name: 'jess'};
+	var {name} = object;
+	```
 
 ## jQuery
 * getters and setters
@@ -136,6 +168,7 @@
 ## Single Page Applications
 * All content lives on a single HTML page, which we manipulate to show different data and elements using javascript and css
 * Plan ahead - wireframes, html/css mocks, data structures
+* Data modeling - make a model for each discrete types of data in the application
 * AJAX to get and set data
 * Routers - keeps track of which route or page a user wants to see
 * Data Store - single source of truth that keeps track of all application state. Should contain instances of any needed models/collections. Should also contain state information such as fetching from server or pagination data.
@@ -180,10 +213,17 @@
       * `this.state` is for any data that may change over time, or that cannot be gathered/figured out from any other source
       * `this.props` is for any data that can be passed in from a parent component and can only change by the parent passing in a new value
 * Component lifecycle
-      1. `getInitialState()` - set to whatever state is before component is mounted. Return value is initial value of `this.state`
-      2. `componentWillMount()` - invoked before the first render occurs. Can force a render by setting state with `setState`
+      1. `getInitialState()` - Set to whatever state is before component is mounted. Return value is initial value of `this.state`.
+      2. `componentWillMount()` - Invoked before the first render occurs. Can force a render by setting state with `setState`.
       3. `render()` - renders the component. Render happens after will mount but before did mount. Other renders happen when props or state change
-      4. `componentDidMount()` - use this to initiate any fetching, and listening, since we know we're going ahead with rendering
+      4. `componentDidMount()` - Use this to initiate any fetching, and listening, since we know we're going ahead with rendering.
+      5. `componentWillUnmount` - Happens right before a component is removed from the DOM for cleaning up any ongoing code listeners, setIntervals, etc. Use to prevent zombies.
+* React Transitions - for simple hover effects, just give elements a `className` and add transitions in CSS. For animations on click events or DOM rendering, use react's animation library.
+	* install animation library as a dependency `npm install --save react-addons-css-transition-group`
+	* build animation by importing library, create an instance of it in our render function of a component, and
+wrap the instance around any elements that we want to have a transition. 
+	* Transition components require 3 props: `transitionName`, `transitionEnterTimeout`, `transitionLeaveTimeout`
+	* Transition children require a key prop
 
 ## Back End as a Service
 * Back end
@@ -198,6 +238,12 @@
       * oauth
       * custom authorization
 * Examples of BaaS - firebase, backendless, parse, Kinvey
+
+## Unit Testing
+* Unit testing is for individual building blogs of an application. Test a specific component to ensure it renders properly or a specific model to ensure correct functionality
+* Testing dependencies - mocha, chai, enzyme
+* Write one test file for each module. Test anything you'd check with `console.log()`.
+* Write tests for custom logic on models and when a component should render differently based on props or state
 
 ## Agile Methodology
 * Standups
