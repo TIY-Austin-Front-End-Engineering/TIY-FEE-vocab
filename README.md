@@ -65,14 +65,14 @@
 * Variables - Used to store repeated values. Denote with $, e.g. `$main-text-color: #8a8a8a`
 * Mixins - Used to store repeated rule sets
 
-```sass
+      ```sass
       @mixin imageBox {
         height: 200px;
         width: 200px;
         border: 10px solid white;
         box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
       } 
-```
+      ```
 * Bourbon - Sass mixin library
 * Neat - Sass grid system built with Bourbon mixins
 
@@ -96,6 +96,7 @@
 * Cloning - save a copy of a repository to your computer: `git clone <remote repo path> <local folder>`
 
 ## JavaScript
+* Data types (interview question: explain the difference between `null` and `undefined`)
 * Type coercion
 * Accessing the DOM with vanilla javascript: `document.querySelector()`, `document.querySelectorAll()`, `document.getElementByID()`, `document.getElementByClassName()`
 * Vanilla javascript event listeners: `element.addEventListener('nameOfEvent', functionToRun)`
@@ -104,7 +105,8 @@
 * Array looping methods - `forEach()`, `map()`, `filter()`, `reduce()`
 * Constructors - functions that are used to create objects
 * Prototypes - an object that other objects can look up methods on
-* `this` keyword
+* `this` keyword (interview question: explain how `this` works in JavaScript
+* Scoping and closures 
 * ES2015 (aka ES6) and ES Next - New and future versions of EcmaScript, the language specification JavaScript follows.
       * Other implementations of EcmaScript include ActionScript, SpiderMonkey, and JScript. [See full list of implementations](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines).
       * ES Next - [ES2016](https://tc39.github.io/ecma262/2016/), ES2017, and beyond
@@ -131,7 +133,7 @@
 * install dependencies with `npm install --save <dependency name>`
 * Install dev dependencies with `npm install --save-dev <dependency name>`
 
-# Single Page Applications
+## Single Page Applications
 * All content lives on a single HTML page, which we manipulate to show different data and elements using javascript and css
 * Plan ahead - wireframes, html/css mocks, data structures
 * AJAX to get and set data
@@ -146,6 +148,42 @@
       * Collections - ordered sets of models
       * Views - listen for events, react to those events, render data to the DOM
       * Router - create router object with keys as URL path and value as the function to call when you go to that route
+
+## React
+* Setting up React environment
+      * start new project using spa-scaffold, webpack, or some other build tool 
+      * install dependencies: `npm install --save react react-dom react-router`
+      * Install dev dependencies: `npm install --save-dev babel-preset-react`
+      * Add react compiler preset:
+
+```json
+	      "babel": {
+	        "sourceType": "module", 
+	        "presets": [
+	          "es2015",
+	          "react"
+	        ]
+	      }
+```
+      * setup `.jshintrc` file `json { "esversion": 6, "esnext": true }`
+* Getting a project started
+      * Plan project, breaking up pages and page elements into modules. Each module is a react component created with a constructor: `React.createClass()`
+      * Every react component needs a render function that must return JSX
+      * Add component to the DOM with the `ReactDOM.render()` function, which takes 2 arguments: the react element to render, and the DOM element into which to render it
+* Using React Router
+      * Import named components (as opposed to components exported as defaults) from react router, e.g. `import { Router, Route, hashHisotry } from 'react-router';` 
+      * Parameterized routes - Use a `:` in your route to denote the part that changes, e.g. `<Route path=":postId" component={BlogPost} />`
+      * Links - React Router has a built in `Link` component that can be imported and used anywhere in the application. Link components work just like anchor tags but use a `to` attribute instead of `href`.
+      * Programmatic navigation - Use the .push() method to add path to route history, e.g. `hashHistory.push('/posts/12345')`
+      * `this.props.children` Anything placed between the opening and closing tags of a component that is NOT self-closing is passed into them as `this.props.children`
+* Props and state
+      * `this.state` is for any data that may change over time, or that cannot be gathered/figured out from any other source
+      * `this.props` is for any data that can be passed in from a parent component and can only change by the parent passing in a new value
+* Component lifecycle
+      1. `getInitialState()` - set to whatever state is before component is mounted. Return value is initial value of `this.state`
+      2. `componentWillMount()` - invoked before the first render occurs. Can force a render by setting state with `setState`
+      3. `render()` - renders the component. Render happens after will mount but before did mount. Other renders happen when props or state change
+      4. `componentDidMount()` - use this to initiate any fetching, and listening, since we know we're going ahead with rendering
 
 ## Back End as a Service
 * Back end
