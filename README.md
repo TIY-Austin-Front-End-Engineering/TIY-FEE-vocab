@@ -193,8 +193,17 @@
 * Backbone is a javascript framework used to build SPAs
       * Often referred to as an MVC (model-view-controller). More accurately an MV* because Backbone doesn't have controllers.
       * Models - contain application data and the logic surrounding it
+      	* you can pass in attributes for them when you create them
+      	* you can set new attributes by using the `.set()` method
+      	* you can get the attributes by using the `.get()` methods
+      	* you can save it to the server with the `.save()` method 
       * Collections - ordered sets of models
-      * Views - listen for events, react to those events, render data to the DOM
+      	* keeps track of models and any changes to them, emitting events when changes occur (adding, removing, updating)
+      	* syncs with the server (`.fetch()`) 
+      * Views
+      	* listen for events
+      	* react to those events
+      	* render data to the DOM
       * Router - create router object with keys as URL path and value as the function to call when you go to that route
 
 ## React
