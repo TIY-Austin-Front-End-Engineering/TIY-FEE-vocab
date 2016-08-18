@@ -40,7 +40,7 @@ These are the terms and concepts you should love and hug and never let go.
 * data attribute
 * icon fonts
 
-## accessibility
+## Accessibility
 * aria roles
 * screen reader
 * tab order
