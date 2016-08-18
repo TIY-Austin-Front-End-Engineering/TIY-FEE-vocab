@@ -82,7 +82,7 @@ These are the terms and concepts you should love and hug and never let go.
 * variables
 * mixins
 * Bourbon
-* neat
+* Neat
 * Sass map
 
 ## JavaScript
